@@ -120,7 +120,7 @@ void task1B()
 			// по-добре е да се ползват '0' и '9', 
 			// а не ascii кодовете на дадените символи 
 			// за по-лесно четим код
-			if ((buff[i]<'0' || buff[i]>'9') && buff[0] != '-')
+			if ((buff[i]<'0' || buff[i]>'9') && (i != 0 && buff[i] != '-')) // isdigit(buff[i]) 
 			{
 				numCheck = false;
 				break;
