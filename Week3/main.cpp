@@ -52,7 +52,6 @@ int main()
 				continue;
 			}
 		}
-
 			std::cout << buff << std::endl;
 	}
 
