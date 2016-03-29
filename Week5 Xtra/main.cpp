@@ -41,9 +41,6 @@ int main()
 
 	int * arr;
 
-
-
-
 	size = size;
 	arr = new int[size];
 
