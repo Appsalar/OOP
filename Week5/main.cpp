@@ -4,49 +4,13 @@
 
 const char fileName[] = "failche.dat";
 
-
 #define FILENAME "failche.dat";
-
-
-struct shitDataStruct
-{
-	char* str;
-	int foo;
-	double bar;
-};
-
-struct plainDataStruct
-{
-	char str[255];
-	int foo;
-	double bar;
-};
-
-
-bool readInput(std::ifstream& input, plainDataStruct*& pArr, int& Count)
-{
-	if (!input)
-		return false;
-
-	input.seekg(0, std::ios::end);
-
-	int size = input.tellg();
-
-
-	input.seekg(0, std::ios::beg);
-
-	Count = size / sizeof(plainDataStruct);
-
-	pArr = new (std::nothrow) plainDataStruct[Count];
-
-	input.read((char*)pArr, size);
-
-	return true;
-}
 
 
 int main()
 {
+	// закоментираният код е пример как можем 
+	// да запишем не POD структура 
 	/*A a;
 
 	std::ofstream out(fileName, std::ios::binary);
@@ -68,7 +32,7 @@ int main()
 	{
 		strcpy(b[i].str, "Armqnov gleda");
 		b[i].foo = 1337;
-		b[i].bar = 27.3;
+		b[i].bar = neshto;
 	}
 
 	// работа със структурите 
@@ -83,23 +47,7 @@ int main()
 
 	int structCounter;
 
-
 	readInput(input, pData, structCounter);
-
-	/*if (!input)
-		return 1;
-
-	input.seekg(0, std::ios::end);
-	int size = input.tellg();
-
-	input.seekg(0, std::ios::beg);
-
-	structCounter = size / sizeof(plainDataStruct);
-
-	pData = new (std::nothrow) plainDataStruct[structCounter];
-
-	input.read((char*)pData, size);*/
-
 
 	for (int i = 0;i < structCounter;++i)
 	{
@@ -112,12 +60,6 @@ int main()
 	delete[] pData;
 
 	input.close();
-
-
-
-
-
-
 
 	return 0;
 }
