@@ -99,7 +99,9 @@ void Array::setAt(int index, int newElem)
 void Array::copyElements(const Array& other)
 {
 	size = other.size;
-	setSize(other.capacity);
+	capacity = other.capacity;
+	delete[] pArr;
+	pArr = new int[capacity];
 	for (int i = 0;i < size;++i)
 		pArr[i] = other.pArr[i];
 }
