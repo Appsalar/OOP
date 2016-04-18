@@ -37,6 +37,7 @@ int Array::getSize() const
 
 void Array::push_back(int elem)
 {
+	// Случаят за празен контейнер! 
 	if (capacity == 0)
 		setSize(2);
 	else if (size == capacity)
@@ -62,6 +63,7 @@ void Array::pop(int key)
 		}
 	}
 
+	// Ако контейнерът е празен няма смисъл да заделя памет
 	if (size == 0)
 	{
 		delete[] pArr;
@@ -83,6 +85,7 @@ int Array::getAt(int index) const
 
 void Array::setAt(int index, int newElem)
 {
+	// Ако индексът е невалиден на хвърля нещо 
 	if (index < 0 || index >= size)
 		throw std::out_of_range("360 NO SKOPE");
 	pArr[index]  = newElem;
