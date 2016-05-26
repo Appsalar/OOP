@@ -9,7 +9,7 @@ public:
 	Keepo();
 	Keepo(int, int, int);
 	Keepo(const Keepo&);
-	Keepo& Keepo::operator=(const Keepo&);
+	Keepo& operator=(const Keepo&);
 	virtual ~Keepo();
 
 	virtual void print() const;
