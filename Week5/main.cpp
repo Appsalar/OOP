@@ -10,7 +10,7 @@ const char fileName[] = "failche.dat";
 int main()
 {
 	// закоментираният код е пример как можем 
-	// да запишем не POD структура 
+	// да запишем структура, в която има указател 
 	/*A a;
 
 	std::ofstream out(fileName, std::ios::binary);
