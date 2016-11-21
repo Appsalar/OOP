@@ -9,21 +9,6 @@ const char fileName[] = "failche.dat";
 
 int main()
 {
-	// закоментираният код е пример как можем 
-	// да запишем структура, в която има указател 
-	/*A a;
-
-	std::ofstream out(fileName, std::ios::binary);
-
-	//out.write((char*)&a, sizeof(a));
-
-	int size = strlen(a.str);
-
-
-	out.write((char*)&size, sizeof(size));
-	out.write((char*)&a.str, size);
-	out.write((char*)(&a + sizeof(void*)), sizeof(a) - sizeof(void*));*/
-
 	std::ofstream out(fileName, std::ios::binary);
 
 	plainDataStruct b[15];
