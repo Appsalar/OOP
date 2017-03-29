@@ -99,9 +99,7 @@ void Array::setAt(int index, int newElem)
 void Array::copyElements(const Array& other)
 {
 	size = other.size;
-	capacity = other.capacity;
-	delete[] pArr;
-	pArr = new int[capacity];
+	setSize(other.capacity);
 	for (int i = 0;i < size;++i)
 		pArr[i] = other.pArr[i];
 }
@@ -109,13 +107,14 @@ void Array::copyElements(const Array& other)
 
 void Array::setSize(int newSize)
 {
-	int* foo = new int[newSize];
+	int* foo = NULL;
+	if(newSize != 0)
+		foo = new int[newSize];
 
 	for (int i = 0;i < size;++i)
 		foo[i] = pArr[i];
 
 	delete[] pArr;
 	pArr = foo;
-	foo = NULL;
 	capacity = newSize;
 }
